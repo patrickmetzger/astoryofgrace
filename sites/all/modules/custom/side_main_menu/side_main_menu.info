@@ -1,0 +1,4 @@
+name = Side Main Menu
+description = Custom module to build out side menu.
+package = ASG
+core = 7.x

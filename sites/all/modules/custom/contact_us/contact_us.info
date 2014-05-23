@@ -1,0 +1,4 @@
+name = Contact Us
+description = Custom module to control the contact us form validation and submissions.
+package = ASG
+core = 7.x

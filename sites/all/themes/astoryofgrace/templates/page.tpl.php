@@ -76,6 +76,27 @@
 </div>
 <!-- /#main-menu -->
 <?php endif; ?>
+
+
+<!-- Modal
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-body">
+						<video id="example_video_1" class="video-js vjs-default-skin"
+              controls preload="auto" width="560" height="315"
+              poster="/sites/all/themes/astoryofgrace/images/video_cover.png"
+              data-setup='{"example_option":true}'>
+             <source src="/sites/all/themes/astoryofgrace/vids/AStoryofGraceSummerTour.mp4" type='video/mp4' />
+             <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+            </video>
+      </div>
+  	</div>
+	</div>  -->
+
+
+
+
+
 <div id="main" class="clearfix main" role="main">
   <div class="container">
     <?php if (!($is_front) && ($breadcrumb)): ?>

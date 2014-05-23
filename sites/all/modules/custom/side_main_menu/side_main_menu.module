@@ -1,0 +1,84 @@
+<?php
+
+/* custom mdule */
+
+function side_main_menu_block_info() {
+	$blocks = array();
+	$blocks[0] = array(
+		'info' => t('SideMainMenu'),
+		'region' => 'header',
+		'status' => 1,
+		'cache' => DRUPAL_NO_CACHE
+	);
+	return $blocks;
+}
+
+/**
+ * Implementation of hook_block_view().
+ */
+function side_main_menu_block_view($delta='') {
+  $block = array();
+  switch ($delta) {
+    case '0':
+      $block['subject'] = t('Side Main Menu');
+      $block['content'] = side_main_menu_contents_menu();
+      break;
+  }
+  return $block;
+}
+
+function side_main_menu_contents_menu(){
+	$menu = menu_tree_all_data('main-menu');
+	$output = '';
+	$classes = '';
+	$sub_classes = '';
+	$sub2_classes = '';
+	
+	$total = count($menu);
+	$i = 0;
+	$active_trail = menu_get_active_trail();
+
+	foreach (array_reverse($active_trail) as $item) {
+    if (!(bool) ($item['type'] & MENU_IS_LOCAL_TASK)) {
+      $active_title = $item['title'];
+    }
+  }
+	$output .= '<nav id="main-nav" role="navigation"><ul>';
+	foreach($menu as $serial => $item){
+		$title = $item['link']['link_title'];
+		$alias = drupal_get_path_alias($item['link']['link_path']);
+		if ($alias == '<front>'){
+			$alias = 'home';
+		}
+		if ($title == $active_title){
+			$selected = $active_title;	
+		}else{
+			$selected = '';
+		}
+		$output .= '<li class="'.$selected.'"><a href="#'.$alias.'">'.$title.'</a></li>';
+	}
+		// Add video
+		$output .= '<li class="video" data-toggle="modal" data-target="#myModal"><a href="#">Video</a></li>';
+	$output .= '</ul></nav>';
+	
+	
+	$output .= '<nav id="main-nav-mobile" role="navigation"><ul>';
+	foreach($menu as $serial => $item){
+		$title = $item['link']['link_title'];
+		$alias = drupal_get_path_alias($item['link']['link_path']);
+		if ($alias == '<front>'){
+			$alias = 'home';
+		}
+		if ($title == $active_title){
+			$selected = $active_title;	
+		}else{
+			$selected = '';
+		}
+		$output .= '<li class="'.$selected.'"><a href="#'.$alias.'">'.$title.'</a></li>';
+	}
+	$output .= '</ul></nav>';
+	
+	
+	
+	return $output;
+}

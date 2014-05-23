@@ -1,3 +1,9 @@
+<div id="floating_header">
+	<div class="logo">
+		<img src="/sites/all/themes/astoryofgrace/images/small_logo.jpg" /> &nbsp; <a href="#home"><img src="/sites/all/themes/astoryofgrace/images/up_arrow.png" /></a>
+  </div>
+</div>
+
 <a href="#main" class="element-invisible element-focusable"><?php print t('Skip to content'); ?></a>
 <?php if ($main_menu): ?>
 <a href="#main-nav" class="element-invisible element-focusable" data-target=".nav-collapse" data-toggle="collapse"><?php print t('Skip to navigation'); ?></a>
@@ -7,202 +13,136 @@
 <div id="admin-shortcuts" class="admin-shortcuts clearfix"> <?php print render($secondary_nav); ?> <?php print render($page['admin_shortcuts']); ?> </div>
 <?php endif; ?>
 <!-- /#admin-shortcuts -->
+<section id="home">
+    <div class="container">
+      <div class="book_cvr">
+        <img src="/sites/all/themes/astoryofgrace/images/astoryofgrace.png" />
+      </div> 
 
-<div id="header" class="clearfix header" role="banner">
-  <div class="container">
-    <div class="row">
-      <div class="<?php if ($page['search_box']): print 'span8'; else: print 'span12'; endif; ?>">
-        <img src="/sites/all/themes/astoryofgrace/images/astoryofgrace_main_cover.jpg" />
+      <div id="main-menu" class="clearfix site-main-menu">
+        <div id="small-logo">
+          <div id="triangle">
+          <span class="logo"><img src="/sites/all/themes/astoryofgrace/images/small_logo.jpg" /></span>
+          <svg id="badgeNav" class="svg replaced-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="130px" height="85px" viewBox="0 0 130 85" enable-background="new 0 0 130 85" xml:space="preserve">
+            <defs>
+            <pattern id="img1" patternUnits="userSpaceOnUse" width="130" height="85">
+            </pattern>
+            </defs>
+            <polygon class="badgeFill" fill="#fff" points="0,60 0,0 130,0 130,60 65,80 " />
+            <polygon fill="#f00" points="130,60 65,80 0,60 0,58 65,78 130,58 " />
+          </svg>
+          
+          </div>
+        </div>
+        <div class="container">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <?php if ($main_menu): ?>
+              <!--<button class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>-->
+              <?php if ($primary_nav || !empty($page['navigation'])): ?>
+              <div>
+								<?php if (($primary_nav) && empty($page['navigation'])): ?>
+                <?php print render($primary_nav); ?> 
+                <!-- /#primary-menu -->
+                <?php endif; ?>
+                <?php if (!empty($page['navigation'])): ?>
+                <?php print render($page['navigation']); ?>
+                <?php endif; ?>
+              </div>
+              <?php endif; ?>
+              <?php endif; ?>
+              <?php if ($main_menu): ?>
+            </div>
+            <?php endif; ?>
+          </div>
+        </div>
       </div>
+      <!-- /#main-menu -->
     </div>
-  </div>
-</div>
-<!-- /#header -->
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="modal-dialog">
+        <div class="modal-body">
+         <video width="100%" poster="/sites/all/themes/astoryofgrace/images/video_cover.png" controls>
+          <source src="/sites/all/themes/astoryofgrace/vids/AStoryofGraceSummerTour.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+			</div>
+    </div>
+   </div><!-- / Modal -->
+   
+   <!-- mobile video -->
+   <div class="mobile-vid" style="margin:50px 0;">
+   		<h3>Promotional Video</h3>
+	   <video width="100%" poster="/sites/all/themes/astoryofgrace/images/video_cover.png" controls>
+      	<source src="/sites/all/themes/astoryofgrace/vids/AStoryofGraceSummerTour.mp4" type="video/mp4">
+			    Your browser does not support the video tag.
+			</video>
+  	</div><!-- / mobile video -->
+   
+	</div>   
+</section>
 
-<?php if (($main_menu) || ($page['search_box'])): ?>
-<div id="main-menu" class="clearfix site-main-menu">
-  <div class="container">
-    <div class="navbar">
-      <?php if ($main_menu): ?>
-      <div class="navbar-inner">
-        <?php endif; ?>
-        <?php if ($page['search_box']): ?>
-        <div id="nav-search" class="nav-search"> <?php print render($page['search_box']); ?> </div>
-        <?php endif; ?>
-        <?php if ($main_menu): ?>
-        <button class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <?php if ($primary_nav || !empty($page['navigation'])): ?>
-        <div class="nav-collapse collapse">
-          <nav id="main-nav" role="navigation">
-            <?php if (($primary_nav) && empty($page['navigation'])): ?>
-            <?php print render($primary_nav); ?> 
-            <!-- /#primary-menu -->
-            <?php endif; ?>
-            <?php if (!empty($page['navigation'])): ?>
-            <?php print render($page['navigation']); ?>
-            <?php endif; ?>
-          </nav>
-        </div>
-        <?php endif; ?>
-        <?php endif; ?>
-        <?php if ($main_menu): ?>
-      </div>
-      <?php endif; ?>
-    </div>
-  </div>
-</div>
-<!-- /#main-menu -->
-<?php endif; ?>
-<div id="main" class="clearfix main" role="main">
-  <div class="container">
-    <?php if (!($is_front) && ($breadcrumb)): ?>
-    <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
-    <?php if ($page['main_top']): ?>
-    <div id="main-top" class="row-fluid main-top"> <?php print render($page['main_top']); ?> </div>
-    <?php endif; ?>
-    <?php if ($page['main_upper']): ?>
-    <div id="main-upper" class="row-fluid main-upper"> <?php print render($page['main_upper']); ?> </div>
-    <?php endif; ?>
-    <div id="main-content" class="row main-content">
-      <?php if ($page['sidebar_first']): ?>
-      <div id="sidebar-first" class="sidebar span3 site-sidebar-first">
-        <div class="row-fluid"><?php print render($page['sidebar_first']); ?></div>
-      </div>
-      <!-- /#sidebar-first -->
-      <?php endif; ?>
-      <div id="content" class="mc-content <?php if (($page['sidebar_first']) && ($page['sidebar_second'])): print 'span6'; elseif (($page['sidebar_first']) || ($page['sidebar_second'])): print 'span9'; else: print 'span12'; endif; ?>">
-        <div id="content-wrapper" class="content-wrapper">
-          <div id="content-head" class="row-fluid content-head">
-            <?php if ($page['highlighted']): ?>
-            <div id="highlighted" class="clearfix"><?php print render($page['highlighted']); ?></div>
-            <?php endif; ?>
-            <?php print render($title_prefix); ?>
-            <?php if ($title): ?>
-            <h1 class="title" id="page-title"> <?php print $title; ?> </h1>
-            <?php endif; ?>
-            <?php print render($title_suffix); ?>
-            <?php if (isset($tabs['#primary'][0]) || isset($tabs['#secondary'][0])): ?>
-            <div class="tabs"> <?php print render($tabs); ?> </div>
-            <?php endif; ?>
-            <?php if ($messages): ?>
-            <div id="console" class="clearfix"><?php print $messages; ?></div>
-            <?php endif; ?>
-            <?php if ($page['help']): ?>
-            <div id="help" class="clearfix"> <?php print render($page['help']); ?> </div>
-            <?php endif; ?>
-            <?php if ($action_links): ?>
-            <ul class="action-links">
-              <?php print render($action_links); ?>
-            </ul>
-            <?php endif; ?>
-          </div>
-          <?php if ($page['content_top']): ?>
-          <div id="content-top" class="row-fluid content-top"> <?php print render($page['content_top']); ?> </div>
-          <?php endif; ?>
-          <?php if ($page['content_upper']): ?>
-          <div id="content-upper" class="row-fluid content-upper"> <?php print render($page['content_upper']); ?> </div>
-          <?php endif; ?>
-          <?php if (($page['content']) || ($feed_icons)): ?>
-          <div id="content-body" class="row-fluid content-body"> <?php print render($page['content']); ?> <?php print $feed_icons; ?> </div>
-          <?php endif; ?>
-          <?php if ($page['content_row2']): ?>
-          <div id="content-row2" class="row-fluid content-row2"> <?php print render($page['content_row2']); ?> </div>
-          <?php endif; ?>
-          <?php if (($page['content_col2-1']) || ($page['content_col2-2'])): ?>
-          <div id="content-col2" class="row-fluid content-col2">
-            <?php if ($page['content_col2-1']): ?>
-            <div class="span6">
-              <div id="content-col2-1" class="span12 clearfix clear-row"> <?php print render($page['content_col2-1']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col2-2']): ?>
-            <div class="span6">
-              <div id="content-col2-2" class="span12 clearfix clear-row"> <?php print render($page['content_col2-2']); ?> </div>
-            </div>
-            <?php endif; ?>
-          </div>
-          <?php endif; ?>
-          <?php if ($page['content_row3']): ?>
-          <div id="content-row3" class="row-fluid content-row3"> <?php print render($page['content_row3']); ?> </div>
-          <?php endif; ?>
-          <?php if (($page['content_col3-1']) || ($page['content_col3-2']) || ($page['content_col3-3'])): ?>
-          <div id="content-col3" class="row-fluid content-col3">
-            <?php if ($page['content_col3-1']): ?>
-            <div class="span4">
-              <div id="content-col3-1" class="span12 clearfix clear-row"> <?php print render($page['content_col3-1']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col3-2']): ?>
-            <div class="span4">
-              <div id="content-col3-2" class="span12 clearfix clear-row"> <?php print render($page['content_col3-2']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col3-3']): ?>
-            <div class="span4">
-              <div id="content-col3-3" class="span12 clearfix clear-row"> <?php print render($page['content_col3-3']); ?> </div>
-            </div>
-            <?php endif; ?>
-          </div>
-          <?php endif; ?>
-          <?php if ($page['content_row4']): ?>
-          <div id="content-row4" class="row-fluid content-row4"> <?php print render($page['content_row4']); ?> </div>
-          <?php endif; ?>
-          <?php if (($page['content_col4-1']) || ($page['content_col4-2']) || ($page['content_col4-3']) || ($page['content_col4-4'])): ?>
-          <div id="content-col4" class="row-fluid content-col4">
-            <?php if ($page['content_col4-1']): ?>
-            <div class="span3">
-              <div id="content-col4-1" class="span12 clearfix clear-row"> <?php print render($page['content_col4-1']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col4-2']): ?>
-            <div class="span3">
-              <div id="content-col4-2" class="span12 clearfix clear-row"> <?php print render($page['content_col4-2']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col4-3']): ?>
-            <div class="span3">
-              <div id="content-col4-3" class="span12 clearfix clear-row"> <?php print render($page['content_col4-3']); ?> </div>
-            </div>
-            <?php endif; ?>
-            <?php if ($page['content_col4-4']): ?>
-            <div class="span3">
-              <div id="content-col4-4" class="span12 clearfix clear-row"> <?php print render($page['content_col4-4']); ?> </div>
-            </div>
-            <?php endif; ?>
-          </div>
-          <?php endif; ?>
-          <?php if ($page['content_lower']): ?>
-          <div id="content-lower" class="row-fluid content-lower"> <?php print render($page['content_lower']); ?> </div>
-          <?php endif; ?>
-          <?php if ($page['content_bottom']): ?>
-          <div id="content-bottom" class="row-fluid content-bottom"> <?php print render($page['content_bottom']); ?> </div>
-          <?php endif; ?>
-        </div>
-        <!-- /#content-wrap --> 
-      </div>
-      <!-- /#content -->
-      <?php if ($page['sidebar_second']): ?>
-      <div id="sidebar-second" class="sidebar span3 site-sidebar-second">
-        <div class="row-fluid"><?php print render($page['sidebar_second']); ?></div>
-      </div>
-      <!-- /#sidebar-second -->
-      <?php endif; ?>
-    </div>
-    <?php if ($page['main_lower']): ?>
-    <div id="main-lower" class="row-fluid main-lower"> <?php print render($page['main_lower']); ?> </div>
-    <?php endif; ?>
-    <?php if ($page['main_bottom']): ?>
-    <div id="main-bottom" class="row-fluid main-bottom"> <?php print render($page['main_bottom']); ?> </div>
-    <?php endif; ?>
-  </div>
-</div>
-<!-- /#main, /#main-wrapper -->
-<?php if ($page['footer']): ?>
+
+<?php
+	$cNode = node_load(2);
+	echo '<section id="'.drupal_get_path_alias('node/'.$cNode->nid).'"><div class="container">';
+	echo '<div class="section_head">'.$cNode->title.'</div>';						
+	print '';
+	echo '</div></section>';
+?>
+
+<?php
+	$name = 'tour_dates';
+	$display_id = 'block_1';
+	$view = views_get_view($name);
+	
+	$title = $view->get_title();
+	$view_content = $view->preview($display_id);
+	echo '<section id="tour-dates"><div class="container">';	
+	echo '<div class="section_head">'.$title.'</div>';
+	echo $view_content;
+	echo '</div></section>';
+?>
+
+<?php
+	$cNode = node_load(20);
+	echo '<section id="'.drupal_get_path_alias('node/'.$cNode->nid).'"><div class="container">';
+	echo '<div class="section_head">'.$cNode->title.'</div>';								
+	print 'lksjdfldskjf';
+	echo '</div></section>';
+?>
+
 <div id="footer" class="clearfix site-footer" role="contentinfo">
   <div class="container">
-    <div id="footer-content" class="row-fluid footer-content"> <?php print render($page['footer']); ?> </div>
+    <div id="footer-content" class="row-fluid footer-content">
+    	<div id="connect-header">
+      Connect with Us!
+      </div>
+      <div id="content-col2" class="row-fluid content-col2">
+        <!-- include contact webform -->
+        <div class="span6">
+          <div id="content-col2-1">
+          <h4>Reach Out</h4>
+          <?php
+            $wNode = node_load(1);
+            webform_node_view($wNode,'full');
+            print theme_webform_view($wNode->content);
+    
+          ?>
+          </div>
+        </div>
+        <div class="span6">
+          <div id="content-col2-2">
+					<?php print render($page['footer_right']); ?>
+          </div>
+      	</div>
+    	</div>
+    </div>
   </div>
 </div>
 <!-- /#footer -->
-<?php endif; ?>
+
+

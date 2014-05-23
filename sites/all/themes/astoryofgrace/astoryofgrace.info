@@ -7,13 +7,17 @@ stylesheets[all][] = bootstrap/css/bootstrap.min.css
 stylesheets[all][] = bootstrap/css/bootstrap-responsive.min.css
 stylesheets[all][] = fontawesome/css/font-awesome.min.css
 stylesheets[all][] = css/astoryofgrace.css
+stylesheets[all][] = css/MyFontsWebfontsOrderM4611938.css
 stylesheets[print][] = css/astoryofgrace_print.css
 stylesheets[all][] = css/ie.css
 
 scripts[] = bootstrap/js/bootstrap.min.js
 scripts[] = js/open_framework.js
 scripts[] = js/jquery.placeholder.min.js
+scripts[] = js/scripts.js
+scripts[] = js/jquery.video-ui.js
 scripts[] = js/override.js
+scripts[] = js/modernizr.custom.96948.js
 
 regions[admin_shortcuts] = Admin Shortcuts (Authenticated Users Only)
 regions[header] = Header
@@ -45,6 +49,7 @@ regions[sidebar_second] = Second sidebar
 regions[main_lower] = Main: Lower
 regions[main_bottom] = Main: Bottom
 regions[footer] = Footer
+regions[footer_right] = Right Footer
 
 ; Settings
 settings[content_order_classes] = ''

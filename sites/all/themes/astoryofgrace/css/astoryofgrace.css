@@ -1,3 +1,4 @@
+
 /* theme options ********************* */
 /* ----- front page title ------------ */
 .front .title { display:none; }
@@ -13,7 +14,14 @@ body.photobg { background-attachment:fixed !important; background-size:cover !im
 .roundedcorners .sidebar .region, .roundedcorners .content-wrapper { padding:10px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; }
 /* global **************************** */
 /* ----- body ------------------------ */
-body { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; background:url("../images/astoryofgrace_bg.jpg") no-repeat top left fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
+body { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; 
+	/*background:url("../images/barbed_bg.png") no-repeat top left fixed;*/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: Novecentowide-Normal;
+}
 /* ----- custom fonts ---------------- */
 /* ----- text ------------------------ */
 h2, h3, h4, h5, h6 { line-height:1.3em; }
@@ -25,6 +33,7 @@ quote, code { margin:.5em 0; }
 .descriptor { margin-bottom:4px; text-transform:uppercase; letter-spacing:.04em; font-size:12px; line-height:1.5em; }
 .caption { margin-top:0; margin-bottom:2em; color:#848484; letter-spacing:.01em; font-style:italic; font-size:13px; }
 /* ----- links ----------------------- */
+a {font-family: 'Roboto', sans-serif; color:#333;}
 a, a:hover { text-decoration:none; }
 .more-link, a.more-link, .page-search .node-readmore a { display:inline-block; clear:both; line-height: 1.4em; margin-top: 0.5em; margin-bottom: 0.5em; text-align:left; text-transform:uppercase; letter-spacing:.02em; font-weight:600; font-size:12px; }
 .more-link a:hover, a.more-link:hover, .page-search .node-readmore a:hover { color:#000; text-decoration:none; }
@@ -58,10 +67,43 @@ input.placeholder, textarea.placeholder { color: #aaa; }
 .element-invisible.element-focusable:active, .element-invisible.element-focusable:focus { position: static !important; clip: auto; overflow: visible; height: auto; padding: 0 1em; }
 /* ----- other ----------------------- */
 hr { clear:both; }
+/* pages *******************************/
+#home {position:relative}
+#vision {min-height:600px;}
+#shop {min-height:400px;}
+#home, #tour-dates {min-height:1000px}
+#vision, #contact-us, #tour-dates, #shop {padding-top:165px;}
+#vision {background:#69C;}
+#tour-dates {background:#ddd;}
+#shop {background:#69C;}
+
+#vid {min-height:600px; background:#666; display:none}
+#tour-dates .section_head {font-size:30px; color:#999; margin-top:-30px; margin-bottom:30px; font-family: Novecentowide-book;}
+.section_head {font-size:30px; color:#CCC; margin-top:-30px; margin-bottom:30px; font-family: Novecentowide-book;}
+.hover {background:#999;}
+
+.tour-header {font-size:16px; font-weight:bold; font-family:Novecentowide-normal; color:#000; padding-bottom:10px;}
+.tour-header-loc {font-size:26px; font-weight:bold; color:#ED3B3A; padding-bottom:15px;}
+.tour-date {padding-bottom:5px; color:#000; font-size:18px;}
+.tour-time {padding-bottom:5px; color:#000;}
+
+#tour-dates .tour-dates {text-align:center; -webkit-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); -moz-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); padding: 45px;}
+#tour-dates .tour-title {font-size:22px; color:#fff; font-weight:bold; margin-bottom:15px; font-family: 'Poiret One', cursive;}
+#tour-dates .tour-link a {color:#ccc; text-decoration:underline; display:block}
+.hover .tour-link a {color:#ccc; text-decoration:underline; display:block}
+
+#tour-dates .tour-body {color:#eee; font-size:16px;}
+
+
 /* header ******************************/
+#floating_header {position:fixed; top:0; height:94px; z-index:2; display:none; width:100%; background:#FFF;}
 /* ----- header region --------------- */
+#header {margin:0 auto; width:100%}
 .header { margin:25px 0 30px; }
 .header-content { clear:both; }
+
+.book_cvr {margin-right:auto; margin-left:auto; width:99%; text-align:center; padding-bottom:20px}
+
 /* ----- search box ------------------ */
 .nav-search { float:right; margin:-65px -20px 0 0; padding:0; min-height:1px; }
 .nav-search .search-form, #header-search .search-form { margin:0; padding:0; }
@@ -83,6 +125,37 @@ hr { clear:both; }
 #name-and-slogan { display:table-cell; padding:20px 0 20px 10px; vertical-align:middle; }
 /* navigation ************************ */
 /* ----- main navigation ------------- */
+#main-nav-mobile {display:none}
+/*#main-menu {position:absolute; top:50px; left:0; width:300px;
+	-webkit-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); -moz-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); box-shadow:0 4px 3px 0 rgba(0,0,0,0.08);
+}*/
+
+.m-nav {z-index:999; position:fixed; top:0; left:0; width:100%; background:#FFF; border-bottom:2px solid #F00;}
+.m-nav #small-logo {
+    float: left;
+    position: relative;
+    z-index: 9999;
+		display:block;
+		width: 167px;
+	  height: 58px;
+}
+
+.m-nav #small-logo span.logo {position:absolute; top:-7px}
+
+.m-nav #badgeNav {}
+.m-nav #triangle {
+	display:none;
+	position:absolute;
+	top:20px;
+}
+
+.modal.fade {
+    top: -100%;
+    transition: opacity 0.3s linear 0s, top 0.3s ease-out 0s;
+}
+
+
+
 .site-main-menu { clear:both; }
 .site-main-menu ul li, .site-main-menu ul li.leaf, .site-main-menu ul li.expanded, .site-main-menu ul li.collapsed { list-style:none; list-style-image:none; }
 .site-main-menu ul.menu { margin:0; }
@@ -105,7 +178,11 @@ nav h2 { position:absolute; left:-10000px; }
 .sidebar { margin-bottom:1.2em; }
 .sidebar .nav { margin-left:1.2em; }
 /* footer **************************** */
-.site-footer { margin-top:40px; margin-bottom:10px; }
+#footer {background: none repeat scroll 0 0 #CCCCCC; padding:20px 0; min-height:300px;}
+
+#connect-header {text-align:center; font-family: Novecentowide-Book; font-size:35px; font-weight:bold; padding-bottom:30px; margin-bottom:20px; border-bottom:1px solid #fff;}
+
+.site-footer {  }
 .site-footer h2 { font-size:20px; line-height:1.5em; }
 /* ----- fat footer ------------------ */
 /* content *****************************/
@@ -151,11 +228,18 @@ img, a img { outline:none; border:none; }
 .main .border-hairline a:hover img { border:1px solid #373737; }
 /* media ***************************** */
 iframe { max-width:100%; }
+
+
 /* ----- Video Player ------------- */
+#vid {min-height:200px; background:#666;}
+.v-player {z-index:999; position:fixed; top:0; left:0; width:100%; background:#FFF; border-bottom:2px solid #F00;}
 .video-player { height: 0; margin-bottom: 1em; overflow: hidden; padding-bottom: 67.5%; padding-top: 1.5625em; position: relative; }
 .video-player.widescreen { padding-bottom: 57.25%; }
 .video-player.vimeo { padding-top: 0; }
 .video-player iframe, .video-player object, .video-player embed, .video-player video { height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
+
+.mobile-vid {display:none}
+
 /* helper classes ******************** */
 /* ----- Views Row Lines ------------- */
 .views-row-lines .views-row {border-bottom:1px solid #F0F0F0; margin-bottom:1em; padding-bottom:1em; overflow: auto; }
@@ -207,17 +291,52 @@ iframe { max-width:100%; }
 .views-grid-six .views-row.views-row-3, .views-grid-six .views-row.views-row-6, .views-grid-six .views-row.views-row-9, .views-grid-six .views-row.views-row-12, .views-grid-six .views-row.views-row-15, .views-grid-six .views-row.views-row-18, .views-grid-six .views-row.views-row-21, .views-grid-six .views-row.views-row-24, .views-grid-six .views-row.views-row-27, .views-grid-six .views-row.views-row-30, .views-grid-six .views-row.views-row-33, .views-grid-six .views-row.views-row-36 { margin-right:0px; }
 .views-grid-seven .views-row { width: 45%; margin-right:2.4%; }
 .views-grid-seven .views-row.views-row-even { margin-right:0; }
+
+#tour-dates .tour-dates {width:100%; clear:both; text-align:center; -webkit-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); -moz-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); min-height: 192px; padding: 45px;}
+#tour-dates .tour-title {font-size:18px; color:#eee; font-weight:bold; margin-bottom:10px;}
+#tour-dates .tour-link a {color:#CCC; text-decoration:underline;}
+
 }
 @media (max-width: 380px) {
 .views-grid-six .views-row { width:48%; }
 .views-grid-six .views-row-even { margin-right:0; }
 .views-grid-six .views-row-odd { margin-right:2.4%; }
+
+#tour-dates .tour-dates {width:100%; clear:both; text-align:center; -webkit-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); -moz-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); min-height: 192px; padding: 45px;}
+#tour-dates .tour-title {font-size:18px; color:#eee; font-weight:bold; margin-bottom:10px;}
+#tour-dates .tour-link a {color:#CCC; text-decoration:underline;}
+
+.tour-header {font-size:16px; font-weight:bold; font-family:Novecentowide-normal; color:#000; padding-bottom:10px;}
+.tour-header-loc {font-size:26px; font-weight:bold; color:#ED3B3A; padding-bottom:15px;}
+.tour-date {padding-bottom:5px; color:#000; font-size:18px;}
+.tour-time {padding-bottom:5px; color:#000;}
+
+#content-col2 {padding:10px;}
+
+#vision, #contact-us, #tour-dates, #shop {padding-top:100px; padding:10px;}
+
+
+#connect-header {
+    border-bottom: 1px solid #FFFFFF;
+    font-family: Novecentowide-Book;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
 }
 @media (max-width:350px) {
 .views-grid-five .views-row { display:block; width:100%; margin-right:0;}
+#tour-dates .tour-dates {width:100%; clear:both; text-align:center; -webkit-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); -moz-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); min-height: 192px; padding: 45px;}
+#tour-dates .tour-title {font-size:18px; color:#eee; font-weight:bold; margin-bottom:10px;}
+#tour-dates .tour-link a {color:#CCC; text-decoration:underline;}
 }
 @media (max-width: 320px) {
 .views-grid-seven .views-row { width: 100%; margin-right:0; }
+
+
 }
 /* ----- positioning ----------------- */
 .spacer { margin-top:30px; }
@@ -250,7 +369,39 @@ html.js input.throbbing { background-position:100% -12px; }
 [class*="span"].clear-row { clear:both; }
 [class*="span"].next-row, [class*="span"].clear-row { margin-left:0; }
 .form-actions { margin-top:0; margin-bottom:0; padding:0; border-top:none; background-color:transparent; }
+.navbar-inner {
+	background-color: #FFF;
+	background-image: none;
+	background-repeat: repeat-x;
+	border: 0;	
+	-webkit-box-shadow:0; -moz-box-shadow:0 0 0 0 rgba(0,0,0,0.0); box-shadow:0 0 0 0 rgba(0,0,0,0.0);
+}
 .navbar-inner { min-height:0; }
+
+.navbar-inner #main-nav ul li {font-size:22px; width:20%; float:left; text-align:center; height:35px;}
+.navbar-inner #main-nav ul li a {display:block; font-size:30px; line-height:35px; font-family: Novecentowide-Light;}
+.navbar-inner #main-nav ul li a:hover {}
+
+.navbar-inner #main-nav ul li a.nav-active {
+	background-color: #fafafa;
+  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-repeat: repeat-x;
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  *zoom: 1;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);}
+
+
+
 .dropdown-menu .active > a, .dropdown-menu .active > a:hover { color:#fff; }
 select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input { margin-bottom:0; }
 /* ----- block alert overrides -- */
@@ -300,6 +451,55 @@ ul.primary { margin:1.5em 0 .2em; }
 .content-row2 [class*="span"]:nth-child(2n+1), .content-col2.row-fluid [class*="span"]:nth-child(2n+1), .content-row3 [class*="span"]:nth-child(2n+1), .content-col3.row-fluid [class*="span"]:nth-child(2n+1), .content-row4 [class*="span"]:nth-child(2n+1), .content-col4.row-fluid [class*="span"]:nth-child(2n+1), .site-sidebar-first .block:nth-child(2n+1), .site-sidebar-second .block:nth-child(2n+1) { clear:both; margin-left:0; }
 /* fix for .well on blocks in first sidebar */
 	.site-sidebar-first .block.well { width:37%; width:-moz-calc(50% - 60px); width:-webkit-calc(50% - 60px); width:-o-calc(50% - 60px); width:calc(50% - 60px); }
+	
+	.m-nav {z-index:999; position:fixed; top:0; left:0; width:100%; background:#FFF; border-bottom:2px solid #F00; display:block}
+	
+.m-nav #small-logo {
+    display: none;
+    float: left;
+    height: 0;
+    position: relative;
+    width: 167px;
+    z-index: 9999;
+}
+#small-logo {display:none}
+	
+	
+	.m-nav #badgeNav {display:none}
+	.m-nav #triangle {
+		display:none;
+		position:absolute;
+		top:0;
+	}
+	
+	
+	.book_cvr {
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 20px;
+		width: 100%;
+	}
+	
+	.navbar {
+		margin-bottom: 0;
+		overflow: visible;
+	}
+	
+	.mobile-vid {display:block}
+
+	#content-col2-1 {padding:10px;}
+	
+	.navbar-inner #main-nav ul li a {
+    display: block;
+    font-family: Novecentowide-Light;
+    font-size: 17px;
+    line-height: 35px;
+	}
+	.navbar-inner {
+    padding: 0;
+	}
+	
+	
 }
 
 /* landscape phone to portrait tablet */
@@ -324,7 +524,7 @@ nav ul li a { display:block; }
 
 @media (min-width: 768px) {
 .navbar-inner { padding:0 20px; }
-.region-navigation .block { float:left; }
+.region-navigation .block { float:left; width:100% }
 .region-navigation .block.pull-right { float:right; }
 }
 
@@ -354,6 +554,33 @@ nav ul li a { display:block; }
 .no-sidebars .content-row2 [class*="span"]:nth-child(2n+1), .no-sidebars .content-col2.row-fluid [class*="span"]:nth-child(2n+1), .no-sidebars .content-row3 [class*="span"]:nth-child(2n+1), .no-sidebars .content-col3.row-fluid [class*="span"]:nth-child(2n+1), .no-sidebars .content-row4 [class*="span"]:nth-child(2n+1), .no-sidebars .content-col4.row-fluid [class*="span"]:nth-child(2n+1) { clear:both; margin-left:0; }
 
 .sidebar-second .content-row2 [class*="span"]:nth-child(2n+1), .sidebar-second .content-row3 [class*="span"]:nth-child(3n+1), .sidebar-second .content-row4 [class*="span"]:nth-child(4n+1) { clear:both; margin-left:0; }
+
+.navbar-inner #main-nav ul li a {
+    display: block;
+    font-family: Novecentowide-Light;
+    font-size: 17px;
+    line-height: 35px;
+	}
+	
+	.m-nav #triangle {
+    display: none;
+    position: absolute;
+    top: 20px;
+}
+
+
+.navbar-inner #main-nav ul li {
+    float: left;
+    font-size: 22px;
+    height: 35px;
+    text-align: center;
+    width: 20%;
+}
+.region-navigation .block {
+    float: left;
+    width: 80%;
+}
+
 }
 
 /* large desktop */
@@ -362,6 +589,220 @@ nav ul li a { display:block; }
 }
 
 /* desktop */
-@media (min-width: 980px) and (max-width: 1199px) {
+@media (min-width: 980px) and (max-width: 1280px) {
 .two-sidebars .content .callout, .two-sidebars .content .bracket, .two-sidebars .content .topline { width:40%; }
+
+.region-navigation .block {
+    float: left;
+    width: 80%;
+}
+
+
+.navbar-inner #main-nav ul li a {
+    display: block;
+    font-family: Novecentowide-Light;
+    font-size: 21px;
+    line-height: 35px;
+}
+
+}
+
+@media (max-width: 320px) {
+	body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#main-menu {width:100%}
+	
+	.views-grid-seven .views-row { width: 100%; margin-right:0; }
+	
+	.m-nav {z-index:999; position:fixed; top:0; left:0; width:100%; background:#FFF; border-bottom:2px solid #F00; display:block}
+	
+	.m-nav #small-logo {
+    display: none;
+    float: left;
+    height: 0;
+    position: relative;
+    width: 167px;
+    z-index: 9999;
+	}
+	#small-logo {display:none}
+	
+	
+	.m-nav #badgeNav {display:none}
+	.m-nav #triangle {
+		display:none;
+		position:absolute;
+		top:0;
+	}
+	
+	
+	.book_cvr {
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 20px;
+		width: 100%;
+	}
+	
+	.navbar {
+		margin-bottom: 0;
+		overflow: visible;
+	}
+	
+	.mobile-vid {display:block}
+	
+	#home, #vision, #shop, #tour-dates {min-height:200px}
+	#vision, #contact-us, #tour-dates, #shop {padding-top:100px;}
+	
+	#tour-dates .tour-dates {
+		width:inherit; 
+		clear:both; 
+		text-align:center; 
+		-webkit-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); 
+			-moz-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); 
+				box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); 
+		min-height: 0; 
+		padding: 25px;}
+	
+	.navbar-inner #main-nav ul li {
+			float: none;
+			font-size: 22px;
+			height: 35px;
+			text-align: center;
+			width: 100%;
+	}
+	
+	
+	ul, ol {
+			margin: 0;
+			padding: 0;
+	}
+	
+	.btn.btn-navbar {
+			float: right;
+			display:none;
+			margin-bottom: 8px;
+	}
+	
+	#main-nav {display:none}
+	#main-nav-mobile {display:block}
+	
+	.navbar-inner #main-nav-mobile ul li {
+			float: left;
+			font-size: 22px;
+			height: 35px;
+			text-align: center;
+			width: 49%;
+	}
+	
+	.section_head {
+			color: #CCCCCC;
+			font-family: 'Poiret One',cursive;
+			font-size: 30px;
+			margin-bottom: 30px;
+			margin-top: 50px;
+	}
+
+	.modal {
+		z-index: 0;
+	}
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+	body {
+	padding-left: 0;
+  padding-right: 0;
+}
+#main-menu {width:100%}
+
+.views-grid-seven .views-row { width: 100%; margin-right:0; }
+
+.m-nav {z-index:999; position:fixed; top:0; left:0; width:100%; background:#FFF; border-bottom:2px solid #F00; display:block}
+	
+.m-nav #small-logo {
+    display: none;
+    float: left;
+    height: 0;
+    position: relative;
+    width: 167px;
+    z-index: 9999;
+}
+#small-logo {display:none}
+	
+	
+	.m-nav #badgeNav {display:none}
+	.m-nav #triangle {
+		display:none;
+		position:absolute;
+		top:0;
+	}
+	
+	
+	.book_cvr {
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 20px;
+		width: 100%;
+	}
+	
+	.navbar {
+		margin-bottom: 0;
+		overflow: visible;
+	}
+	
+	.mobile-vid {display:block}
+
+	#content-col2-1 {padding:10px;}
+
+#home, #vision, #shop, #tour-dates {min-height:200px}
+#vision, #contact-us, #tour-dates, #shop {padding-top:100px;}
+
+#tour-dates .tour-dates {
+	width:inherit; 
+	clear:both; 
+	text-align:center; 
+	-webkit-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); 
+		-moz-box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); 
+			box-shadow:0 4px 3px 0 rgba(0,0,0,0.08); 
+	min-height: 0; 
+	padding: 25px;}
+
+.navbar-inner #main-nav ul li {
+    float: none;
+    font-size: 22px;
+    height: 35px;
+    text-align: center;
+    width: 100%;
+}
+
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+.btn.btn-navbar {
+    float: right;
+    margin-bottom: 8px;
+}
+
+#main-nav {display:none}
+#main-nav-mobile {display:block}
+
+.navbar-inner #main-nav-mobile ul li {
+    float: left;
+    font-size: 22px;
+    height: 35px;
+    text-align: center;
+    width: 49%;
+}
+
+.section_head {
+    color: #CCCCCC;
+    font-family: 'Poiret One',cursive;
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
 }
